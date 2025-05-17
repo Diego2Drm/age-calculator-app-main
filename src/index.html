@@ -21,19 +21,35 @@
 </head>
 
 <body>
+  <section>
+    <div>
+      <label>
+        <span>Day</span>
+        <input type="number" id="day" min="1" max="31">
+      </label>
+      <label>
+        <span>Month</span>
+        <input type="number" id="month" min="1" max="12">
+      </label>
+      <label>
+        <span>Year</span>
+        <input type="number" id="year" min="1900" max="2100">
+      </label>
+    </div>
 
-  Day
-  DD
+    <div>
+      <div class="line"></div>
+      <button onclick="showAge()">
+        <img src="./assets/images/icon-arrow.svg" alt="icon-arrow">
+      </button>
+    </div>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
+    <div>
+      <p><span id="yearsResult">--</span> years</p>
+      <p><span id="monthResult">--</span> months</p>
+      <p><span id="daysResult">--</span> days</p>
+    </div>
+  </section>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
@@ -42,3 +58,57 @@
 </body>
 
 </html>
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Edad</title>
+  <script>
+    function isValidDate(year, month, day) {
+      const date = new Date(year, month - 1, day);
+      return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+    }
+
+    function calculateAge(birthYear, birthMonth, birthDay) {
+      if (!isValidDate(birthYear, birthMonth, birthDay)) {
+        return "La fecha ingresada no es válida.";
+      }
+
+      const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
+      const currentDate = new Date();
+
+      let ageYears = currentDate.getFullYear() - birthDate.getFullYear();
+      let ageMonths = currentDate.getMonth() - birthDate.getMonth();
+      let ageDays = currentDate.getDate() - birthDate.getDate();
+
+      if (ageDays < 0) {
+        const previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+        ageDays += previousMonth.getDate();
+        ageMonths--;
+      }
+
+      if (ageMonths < 0) {
+        ageMonths += 12;
+        ageYears--;
+      }
+
+      return `Tienes ${ageYears} años, ${ageMonths} meses y ${ageDays} días.`;
+    }
+
+    function showAge() {
+      const year = parseInt(document.getElementById("year").value);
+      const month = parseInt(document.getElementById("month").value);
+      const day = parseInt(document.getElementById("day").value);
+      document.getElementById("result").innerText = calculateAge(year, month, day);
+    }
+  </script>
+</head>
+
+</html> -->
