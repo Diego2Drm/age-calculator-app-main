@@ -23,17 +23,25 @@
 <body>
   <section>
     <div>
-      <label>
-        <span>Day</span>
-        <input type="number" id="day" min="1" max="31">
+      <label id="labelDay">
+        <p>Day</p>
+        <input type="number" id="day" min="1" max="31" placeholder="DD">
+        <span class="hidden">This field required</span>
+        <span id="errorDay" class="hidden">Must be a valid day</span>
       </label>
-      <label>
-        <span>Month</span>
-        <input type="number" id="month" min="1" max="12">
+
+      <label id="labelMonth">
+        <p>Month</p>
+        <input type="number" id="month" min="1" max="12" placeholder="MM">
+        <span class="hidden">This field required</span>
+        <span id="errorDay" class="hidden">Must be a valid month</span>
       </label>
-      <label>
-        <span>Year</span>
-        <input type="number" id="year" min="1900" max="2100">
+
+      <label id="labelYear">
+        <p>Year</p>
+        <input type="number" id="year" min="1900" max="2100" placeholder="YYYY">
+        <span class="hidden">This field required</span>
+        <span id="errorDay" class="hidden">Must be a valid year</span>
       </label>
     </div>
 
