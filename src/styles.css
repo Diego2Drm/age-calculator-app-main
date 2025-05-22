@@ -162,7 +162,21 @@ label input.error {
 }
 
 label input.errorInput {
-  border: 1px solid var(--Red-400);
+  border: 2px solid var(--Red-400);
+}
+
+/* Active states */
+label input:focus {
+  border: 1px solid var(--Purple-500);
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--Black);
+}
+
+button:active {
+  transform: scale(.5);
 }
 
 @media (min-width: 768px) {
@@ -183,6 +197,8 @@ label input.errorInput {
   button {
     width: 6rem;
     height: 6rem;
+    transition: ease;
+    transition-duration: 500ms;
   }
 
   button img {
